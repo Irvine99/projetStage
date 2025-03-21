@@ -17,3 +17,9 @@ class PieceController {
         }
     }
 }
+
+class Homepage {
+    public function home() {
+        include './../View/homepage.php';
+    }
+}

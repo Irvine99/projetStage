@@ -1,4 +1,4 @@
-<?php include 'head.php'; ?>
+<?php include './module/head.php'; ?>
 
 <div class="mt-5">
     <h1 class="text-2xl font-bold">Liste des pièces</h1>
@@ -26,4 +26,4 @@
     </div>
 </div>
 
-<?php include 'script.php'; ?>
+<?php include './module/script.php'; ?>

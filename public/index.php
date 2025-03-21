@@ -1,24 +1,14 @@
 <?php
-require_once '../config/db.php';
-require_once '../src/Controller/PieceController.php';
+// require_once '../config/db.php';
+require_once '../src/Controller/AppController.php';
 
-use App\Controller\PieceController;
+use App\Controller\AppController;
 
-// Initialisation du contrôleur
-$controller = new PieceController();
+// Instanciation du contrôleur principal
+$controller = new AppController();
 
-// Vérification de l'action GET et appel de la méthode correspondante
+// Récupérer l'action GET (par défaut 'afficherListe')
 $action = isset($_GET['action']) ? $_GET['action'] : 'afficherListe';
 
-switch ($action) {
-    case 'ajouterPiece':
-        // Afficher le formulaire pour ajouter une pièce
-        include 'ajouter_piece.php';
-        break;
-
-    case 'afficherListe':
-    default:
-        // Afficher la liste des pièces
-        $controller->afficherListe($pdo);
-        break;
-}
+// Route vers la méthode appropriée dans le contrôleur
+$controller->router($action, $pdo);
